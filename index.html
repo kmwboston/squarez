@@ -17,28 +17,29 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="cube-wrapper">
-                    <div id="cube">
-                        <div class="front" style="text-align: center;">
-                            <p>front</p>
-                        </div>
-                        <div class="back" style="text-align: center;">
-                            <p>back</p>
-                        </div>
-                        <div class="top" style="text-align: center;">
-                            <p>top</p>
-                        </div>
-                        <div class="bottom" style="text-align: center;">
-                            <p>bottom</p>
-                        </div>
-                        <div class="right" style="text-align: center;">
-                            <p>right</p>
-                        </div>
-                        <div class="left" style="text-align: center;">
-                            <p>left</p>
-                        </div>
-                    </div>
-                </div>
+                <div id="cube"></div>
+                <!--<div class="cube-wrapper">-->
+                    <!--<div id="cube">-->
+                        <!--<div class="front" style="text-align: center;">-->
+                            <!--<p>front</p>-->
+                        <!--</div>-->
+                        <!--<div class="back" style="text-align: center;">-->
+                            <!--<p>back</p>-->
+                        <!--</div>-->
+                        <!--<div class="top" style="text-align: center;">-->
+                            <!--<p>top</p>-->
+                        <!--</div>-->
+                        <!--<div class="bottom" style="text-align: center;">-->
+                            <!--<p>bottom</p>-->
+                        <!--</div>-->
+                        <!--<div class="right" style="text-align: center;">-->
+                            <!--<p>right</p>-->
+                        <!--</div>-->
+                        <!--<div class="left" style="text-align: center;">-->
+                            <!--<p>left</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <div class="col-md-6">
                 Bootstrap Tutorial
@@ -76,10 +77,37 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="src/squarez.js"></script>
-    <!--<script>-->
-        <!--$(document).ready(function(){-->
-            <!--Library.greet();-->
-        <!--});-->
-    <!--</script>-->
+    <script>
+        $(document).ready(function(){
+            $("#cube").squarez();
+            
+            var ilr = 0;
+            $('.rotate-button-lr').click(function() {
+                ilr++;
+                var degrees = ilr * -90;
+                var rotation = 'rotateY('+degrees+'deg)';
+
+                $('#cube').css({
+                    '-webkit-transform': rotation,
+                    '-moz-transform': rotation,
+                    '-ms-transform': rotation
+                })
+            });
+
+            var itb = 0;
+            $('.rotate-button-tb').click(function() {
+                itb++;
+                var degrees = itb * -90;
+                var rotation = 'rotateX('+degrees+'deg)';
+
+                $('#cube').css({
+                    '-webkit-transform': rotation,
+                    '-moz-transform': rotation,
+                    '-ms-transform': rotation
+                })
+            });
+
+        });
+    </script>
 </body>
 </html>
