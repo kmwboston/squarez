@@ -5,7 +5,21 @@
     <title>Test</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/squarez.css">
+    <style>
+        h3.bg-success {
+            font-size: 30px;
+            padding:30px 0;
+            margin:0;
+        }
 
+        .header-top {
+            margin-bottom:30px;
+        }
+
+        .rotate-control {
+            margin-top:30px;
+        }
+    </style>
 </head>
 <body>
 <section>
@@ -17,7 +31,26 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div id="cube"></div>
+                <div id="cube">
+                    <figure class="front">
+                        <p>front</p>
+                    </figure>
+                    <figure class="back">
+                        <p>back</p>
+                    </figure>
+                    <figure class="top">
+                        <p>top</p>
+                    </figure>
+                    <figure class="bottom">
+                        <p>bottom</p>
+                    </figure>
+                    <figure class="right">
+                        <p>right</p>
+                    </figure>
+                    <figure class="left">
+                        <p>left</p>
+                    </figure>
+                </div>
                 <!--<div class="cube-wrapper">-->
                     <!--<div id="cube">-->
                         <!--<div class="front" style="text-align: center;">-->
@@ -67,6 +100,13 @@
                         <button type="button" class="btn btn-default rotate-button-lr">RotateY</button>
                         <button type="button" class="btn btn-default rotate-button-tb">RotateX</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="cube2">
+
                 </div>
             </div>
         </div>
