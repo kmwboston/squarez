@@ -51,28 +51,6 @@
                         <p>left</p>
                     </figure>
                 </div>
-                <!--<div class="cube-wrapper">-->
-                    <!--<div id="cube">-->
-                        <!--<div class="front" style="text-align: center;">-->
-                            <!--<p>front</p>-->
-                        <!--</div>-->
-                        <!--<div class="back" style="text-align: center;">-->
-                            <!--<p>back</p>-->
-                        <!--</div>-->
-                        <!--<div class="top" style="text-align: center;">-->
-                            <!--<p>top</p>-->
-                        <!--</div>-->
-                        <!--<div class="bottom" style="text-align: center;">-->
-                            <!--<p>bottom</p>-->
-                        <!--</div>-->
-                        <!--<div class="right" style="text-align: center;">-->
-                            <!--<p>right</p>-->
-                        <!--</div>-->
-                        <!--<div class="left" style="text-align: center;">-->
-                            <!--<p>left</p>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
             <div class="col-md-6">
                 Bootstrap Tutorial
@@ -103,13 +81,30 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="cube2">
-
-                </div>
-            </div>
-        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+                <!--<div id="cube2">-->
+                    <!--<figure class="front">-->
+                        <!--<p>front</p>-->
+                    <!--</figure>-->
+                    <!--<figure class="back">-->
+                        <!--<p>back</p>-->
+                    <!--</figure>-->
+                    <!--<figure class="top">-->
+                        <!--<p>top</p>-->
+                    <!--</figure>-->
+                    <!--<figure class="bottom">-->
+                        <!--<p>bottom</p>-->
+                    <!--</figure>-->
+                    <!--<figure class="right">-->
+                        <!--<p>right</p>-->
+                    <!--</figure>-->
+                    <!--<figure class="left">-->
+                        <!--<p>left</p>-->
+                    <!--</figure>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </section>
 
@@ -122,7 +117,9 @@
             $("#cube").squarez({
                 width: 200,
                 height: 200,
-                transitionTime: 2
+                rotateSpeed: 1,
+                colorFront: 'purple',
+                colorBack: 'blue'
             });
 
             var ilr = 0;

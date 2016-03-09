@@ -2,9 +2,6 @@
  * Created by Tigjer on 2/3/16.
  */
 
-//lets get an initialize function going!!!
-
-
 (function($){
     'use strict';
     function define_Library(){
@@ -25,22 +22,19 @@
             colorLeft: 'red',
             opacity: '.8',
             perspective: 1000,
-            borderWidth: 1,
-            borderType: 'solid',
-            borderColor: 'black'
+            border: '1px solid black'
         };
 
-        //todo: needs auto rotate function, rotate controls, color, opacity
+        //todo: needs auto rotate function, rotate controls
 
         //todo: needs resizing function for responsiveness
 
-        //todo: separate function to standardize gifs/images on faces??
+        //todo: standardize gifs/images on faces??
 
         $.fn.squarez = function(options){
             //initialize namespace var
             var square = {};
             var el = this;
-            //var names = "timmy";
 
             var init = function () {
                 //initialize the plugin
@@ -56,6 +50,12 @@
                 var cubeWidth = square.settings.width;
                 var cubeHeight = square.settings.height;
                 var cube_wrapper = el.parent();
+                var front = el.children('.front');
+                var back = el.children('.back');
+                var top = el.children('.top');
+                var bottom = el.children('.bottom');
+                var left = el.children('.left');
+                var right = el.children('.right');
 
                 $(cube_wrapper).css({
                     'width': cubeWidth,
@@ -76,58 +76,58 @@
                     'transform-origin':cubeHeight/2+'px '+cubeWidth/2+'px '+(0-cubeHeight/2)+'px'
                 });
 
-                $('.front').css({
+                $(front).css({
                     'background-color': square.settings.colorFront,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'translateZ(' + 0 + 'px)',
                     '-moz-transform': 'translateZ(' + 0 + 'px)',
                     'transform': 'translateZ(' + 0 + 'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
-                $('.back').css({
+                $(back).css({
                     'background-color': square.settings.colorBack,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'rotateY('+(0-180)+'deg) translateZ(' + cubeWidth + 'px)',
                     '-moz-transform': 'rotateY('+(0-180)+'deg) translateZ(' + cubeWidth + 'px)',
                     '-ms-transform': 'rotateY('+(0-180)+'deg) translateZ(' + cubeWidth + 'px)',
                     'transform': 'rotateY('+(0-180)+'deg) translateZ(' + cubeWidth + 'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
-                $('.bottom').css({
+                $(bottom).css({
                     'background-color': square.settings.colorBottom,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'rotateX('+(0-90)+'deg) translateZ('+(cubeWidth/2)+'px) translateY('+(cubeWidth/2)+'px)',
                     '-moz-transform': 'rotateX('+(0-90)+'deg) translateZ('+(cubeWidth/2)+'px) translateY('+(cubeWidth/2)+'px)',
                     '-ms-transform': 'rotateX('+(0-90)+'deg) translateZ(' + (cubeWidth/2) + 'px) translateY('+(cubeWidth/2)+'px)',
                     'transform': 'rotateX('+(0-90)+'deg) translateZ('+(cubeWidth/2)+'px) translateY('+(cubeWidth/2)+'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
-                $('.top').css({
+                $(top).css({
                     'background-color': square.settings.colorTop,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'rotateX('+90+'deg) translateZ(' +cubeHeight/2 + 'px) translateY('+(0-cubeHeight/2)+'px)',
                     '-moz-transform': 'rotateX('+90+'deg) translateZ(' +cubeHeight/2 + 'px) translateY('+(0-cubeHeight/2)+'px)',
                     '-ms-transform': 'rotateX('+90+'deg) translateZ(' +cubeHeight/2 + 'px) translateY('+(0-cubeHeight/2)+'px)',
                     'transform': 'rotateX('+90+'deg) translateZ(' +cubeHeight/2 + 'px) translateY('+(0-cubeHeight/2)+'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
-                $('.right').css({
+                $(right).css({
                     'background-color': square.settings.colorRight,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'rotateY('+90+'deg) translateZ(' +cubeWidth/2 + 'px) translateX('+(cubeWidth/2)+'px)',
                     '-moz-transform': 'rotateY('+90+'deg) translateZ(' +cubeWidth/2 + 'px) translateX('+(cubeWidth/2)+'px)',
                     '-ms-transform': 'rotateY('+90+'deg) translateZ(' +cubeWidth/2 + 'px) translateX('+(cubeWidth/2)+'px)',
                     'transform': 'rotateY('+90+'deg) translateZ(' +cubeWidth/2 + 'px) translateX('+(cubeWidth/2)+'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
-                $('.left').css({
+                $(left).css({
                     'background-color': square.settings.colorLeft,
                     'opacity': square.settings.opacity,
                     '-webkit-transform': 'rotateY('+(0-90)+'deg) translateZ('+ cubeWidth/2 +'px) translateX('+(0-cubeWidth/2)+'px)',
                     '-moz-transform': 'rotateY('+(0-90)+'deg) translateZ('+ cubeWidth/2 +'px) translateX('+(0-cubeWidth/2)+'px)',
                     '-ms-transform': 'rotateY('+(0-90)+'deg) translateZ('+ cubeWidth/2 +'px) translateX('+(0-cubeWidth/2)+'px)',
                     'transform': 'rotateY('+(0-90)+'deg) translateZ('+ cubeWidth/2 +'px) translateX('+(0-cubeWidth/2)+'px)',
-                    'border': square.settings.borderWidth + 'px ' + square.settings.borderType + ' ' + square.settings.borderColor
+                    'border': square.settings.border
                 });
 
             };
@@ -147,12 +147,3 @@
     }
 })(jQuery);
 
-
-
-
-//el.html('<div class="front" style="text-align: center;"><p>front</p></div>' +
-//    '<div class="back" style="text-align: center;"><p>back</p></div>' +
-//    '<div class="top" style="text-align: center;"><p>top</p></div>' +
-//    '<div class="bottom" style="text-align: center;"><p>bottom</p></div>' +
-//    '<div class="right" style="text-align: center;"><p>right</p></div>' +
-//    '<div class="left" style="text-align: center;"><p>left</p></div>');
