@@ -11,10 +11,13 @@
         var Squarez = {
             name: 'squarezzz'
         };
-        var defaults = {};
+        var defaults = {
+            width: 300,
+            height: 300
+        };
 
         $.fn.squarez = function(options){
-            //initiallize namespace var
+            //initialize namespace var
             var square = {};
             var el = this;
             //var names = "timmy";
@@ -35,8 +38,14 @@
                     '<div class="right" style="text-align: center;"><p>right</p></div>' +
                     '<div class="left" style="text-align: center;"><p>left</p></div>');
 
-                var cubeWidth = $(".cube-wrapper").outerWidth();
-                var cubeHeight = $(".cube-wrapper").outerHeight();
+                var cubeWidth = square.settings.width;
+                var cubeHeight = square.settings.height;
+                var cube_wrapper = el.parent();
+
+                $(cube_wrapper).css({
+                    'width': cubeWidth,
+                    'height': cubeHeight
+                })
 
                 $(el).css({
                     '-webkit-transform-origin':cubeHeight/2+'px '+cubeWidth/2+'px '+(0-cubeHeight/2)+'px',

@@ -79,8 +79,11 @@
     <script src="src/squarez.js"></script>
     <script>
         $(document).ready(function(){
-            $("#cube").squarez();
-            
+            $("#cube").squarez({
+                width: 200,
+                height: 200
+            });
+
             var ilr = 0;
             $('.rotate-button-lr').click(function() {
                 ilr++;
