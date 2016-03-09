@@ -22,10 +22,6 @@
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
     transition: transform 1s;
-    /*-webkit-transform-origin:150px 150px -150px;*/
-    /*-moz-transform-origin:150px 150px -150px;*/
-    /*-ms-transform-origin:150px 150px -150px;*/
-    /*transform-origin:150px 150px -150px;*/
 }
 
 #cube div {
