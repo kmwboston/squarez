@@ -4,7 +4,7 @@
 
 (function($){
     'use strict';
-    function define_Library(){
+    function define_Squarez(){
         var Squarez = {
             name: 'squarezzz'
         };
@@ -24,8 +24,6 @@
             perspective: 1000,
             border: '1px solid black'
         };
-
-        //todo: needs auto rotate function, rotate controls
 
         //todo: needs resizing function for responsiveness
 
@@ -49,7 +47,7 @@
 
                 var cubeWidth = square.settings.width;
                 var cubeHeight = square.settings.height;
-                var cube_wrapper = el.parent();
+                var cubeWrapper = el.parent();
                 var front = el.children('.front');
                 var back = el.children('.back');
                 var top = el.children('.top');
@@ -57,7 +55,11 @@
                 var left = el.children('.left');
                 var right = el.children('.right');
 
-                $(cube_wrapper).css({
+                if(square.settings.autoRotate){
+                    el.addClass('spin');
+                }
+
+                $(cubeWrapper).css({
                     'width': cubeWidth,
                     'height': cubeHeight,
                     '-webkit-perspective': square.settings.perspective + 'px',
@@ -66,6 +68,9 @@
                 });
 
                 $(el).css({
+                    '-moz-animation-duration': square.settings.rotateSpeed+'s',
+                    '-webkit-animation-duration': square.settings.rotateSpeed+'s',
+                    '-ms-animation-duration': square.settings.rotateSpeed+'s',
                     '-webkit-transition': '-webkit-transform '+square.settings.rotateSpeed+'s',
                     '-moz-transition': '-moz-transform '+square.settings.rotateSpeed+'s',
                     '-o-transition': '-o-transform '+square.settings.rotateSpeed+'s',
@@ -139,11 +144,10 @@
     }
     //define globally if it doesn't already exist
     if(typeof(Squarez) === 'undefined'){
-        window.Squarez = define_Library();
+        window.Squarez = define_Squarez();
         console.log("It worked!, the library name is "+Squarez.name)
     }
     else{
         console.log("Squarez already defined.");
     }
 })(jQuery);
-

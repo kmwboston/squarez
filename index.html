@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/bootstrap-3.3.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/squarez.css">
     <style>
         h3.bg-success {
@@ -19,6 +19,46 @@
         .rotate-control {
             margin-top:30px;
         }
+
+        /*.front {*/
+            /*background-image: url("img/anime-shocked2.gif");*/
+            /*background-repeat: no-repeat;*/
+            /*background-position:center center;*/
+            /*-webkit-background-size: cover;*/
+            /*-moz-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+        /*}*/
+
+        /*.back {*/
+            /*background-image: url("img/samie2-rw.png");*/
+            /*background-repeat: no-repeat;*/
+            /*background-position:center center;*/
+            /*-webkit-background-size: cover;*/
+            /*-moz-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+        /*}*/
+
+        /*.right {*/
+            /*background-image: url("img/dogjacket.jpg");*/
+            /*background-repeat: no-repeat;*/
+            /*background-position:center center;*/
+            /*-webkit-background-size: cover;*/
+            /*-moz-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+        /*}*/
+
+        /*.left {*/
+            /*background-image: url("img/whipitup.gif");*/
+            /*background-repeat: no-repeat;*/
+            /*background-position:center center;*/
+            /*-webkit-background-size: cover;*/
+            /*-moz-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -29,27 +69,51 @@
                 <h3 class="bg-success">My Rotating Cube Haha</h3>
             </div>
         </div>
+        <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+                <!--<div id="cube2">-->
+                    <!--<div class="front">-->
+                        <!--<p>front</p>-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<p>back</p>-->
+                    <!--</div>-->
+                    <!--<div class="top">-->
+                        <!--<p>top</p>-->
+                    <!--</div>-->
+                    <!--<div class="bottom">-->
+                        <!--<p>bottom</p>-->
+                    <!--</div>-->
+                    <!--<div class="right">-->
+                        <!--<p>right</p>-->
+                    <!--</div>-->
+                    <!--<div class="left">-->
+                        <!--<p>left</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="row">
             <div class="col-md-6">
                 <div id="cube">
-                    <figure class="front">
+                    <div class="front">
                         <p>front</p>
-                    </figure>
-                    <figure class="back">
+                    </div>
+                    <div class="back">
                         <p>back</p>
-                    </figure>
-                    <figure class="top">
+                    </div>
+                    <div class="top">
                         <p>top</p>
-                    </figure>
-                    <figure class="bottom">
+                    </div>
+                    <div class="bottom">
                         <p>bottom</p>
-                    </figure>
-                    <figure class="right">
+                    </div>
+                    <div class="right">
                         <p>right</p>
-                    </figure>
-                    <figure class="left">
+                    </div>
+                    <div class="left">
                         <p>left</p>
-                    </figure>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -81,72 +145,62 @@
                 </div>
             </div>
         </div>
-        <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-                <!--<div id="cube2">-->
-                    <!--<figure class="front">-->
-                        <!--<p>front</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="back">-->
-                        <!--<p>back</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="top">-->
-                        <!--<p>top</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="bottom">-->
-                        <!--<p>bottom</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="right">-->
-                        <!--<p>right</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="left">-->
-                        <!--<p>left</p>-->
-                    <!--</figure>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
     </div>
 </section>
 
 
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="src/jquery-1.11.0.js"></script>
+    <script src="src/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     <script src="src/squarez.js"></script>
     <script>
         $(document).ready(function(){
             $("#cube").squarez({
                 width: 200,
                 height: 200,
-                rotateSpeed: 1,
+                rotateSpeed: 5,
                 colorFront: 'purple',
-                colorBack: 'blue'
+                colorBack: 'blue',
+                autoRotate: true,
+                opacity:.9
             });
 
-            var ilr = 0;
-            $('.rotate-button-lr').click(function() {
-                ilr++;
-                var degrees = ilr * -90;
-                var rotation = 'rotateY('+degrees+'deg)';
 
-                $('#cube').css({
-                    '-webkit-transform': rotation,
-                    '-moz-transform': rotation,
-                    '-ms-transform': rotation
-                })
+            $("#cube2").squarez({
+                width: 300,
+                height: 300,
+                rotateSpeed: 5,
+                colorFront: 'green',
+                colorBack: 'black',
+                autoRotate: true
             });
 
-            var itb = 0;
-            $('.rotate-button-tb').click(function() {
-                itb++;
-                var degrees = itb * -90;
-                var rotation = 'rotateX('+degrees+'deg)';
+//            var ilr = 0;
+//            $('.rotate-button-lr').click(function() {
+//                ilr++;
+//                var degrees = ilr * -90;
+//                var rotation = 'rotateY('+degrees+'deg)';
+//
+//                $('#cube, #cube2').css({
+//                    '-webkit-transform': rotation,
+//                    '-moz-transform': rotation,
+//                    '-ms-transform': rotation
+//                })
+//            });
+//
+//            var itb = 0;
+//            $('.rotate-button-tb').click(function() {
+//                itb++;
+//                var degrees = itb * -90;
+//                var rotation = 'rotateX('+degrees+'deg)';
+//
+//                $('#cube, #cube2').css({
+//                    '-webkit-transform': rotation,
+//                    '-moz-transform': rotation,
+//                    '-ms-transform': rotation
+//                })
+//            });
 
-                $('#cube').css({
-                    '-webkit-transform': rotation,
-                    '-moz-transform': rotation,
-                    '-ms-transform': rotation
-                })
-            });
+
 
         });
     </script>
