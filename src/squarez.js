@@ -25,9 +25,7 @@
             border: '1px solid black'
         };
 
-        //todo: needs resizing function for responsiveness
-
-        //todo: standardize gifs/images on faces??
+        //todo: needs resizing function for responsiveness?
 
         $.fn.squarez = function(options){
             //initialize namespace var
@@ -151,3 +149,5 @@
         console.log("Squarez already defined.");
     }
 })(jQuery);
+
+

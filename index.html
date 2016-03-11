@@ -174,6 +174,35 @@
                 autoRotate: true
             });
 
+            $(window).resize(function() {
+                var cubeWrapper = $('.cube-wrapper');
+                var cubeWrapperParent = cubeWrapper.parent();
+                var containerWidth = $(cubeWrapperParent).innerWidth();
+                var containerHeight = $(cubeWrapperParent).innerHeight();
+
+                var cubeWidth = cubeWrapper.width();
+                var cubeHeight = cubeWrapper.height();
+
+                if(containerWidth == cubeWidth + 100) {
+                    element.width(Math.ceil(cubeWidth - 50));
+                    element.height(Math.ceil(cubeHeight - 50));
+                };
+
+                if(containerHeight == cubeHeight + 100) {
+                    element.width(Math.ceil(cubeWidth - 50));
+                    element.height(Math.ceil(cubeHeight - 50));
+                };
+
+
+//                element.width(Math.ceil(containerWidth));
+//                element.height(Math.ceil(containerWidth * element.data('aspectRatio'))); //Set the videos aspect ratio, see https://css-tricks.com/fluid-width-youtube-videos/
+//
+//                if(containerHeight < element.height()) {
+//                    element.width(Math.ceil(containerWidth));
+//                    element.height(Math.ceil(containerWidth));
+//                }
+            }).trigger('resize');
+
 //            var ilr = 0;
 //            $('.rotate-button-lr').click(function() {
 //                ilr++;
